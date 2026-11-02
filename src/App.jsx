@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 
-const PostDetailPage = lazy(() => import("./pages/detailpage"));
-const CreatePostPage = lazy(() => import("./pages/createpost"));
+const DetailPage = lazy(() => import("./pages/DetailPage"));
+const CreatePost = lazy(() => import("./pages/CreatePost"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="posts/new" element={<CreatePostPage />} />
-        <Route path="posts/:slug" element={<PostDetailPage />} />
+        <Route path="posts/new" element={<CreatePost />} />
+        <Route path="posts/:slug" element={<DetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
